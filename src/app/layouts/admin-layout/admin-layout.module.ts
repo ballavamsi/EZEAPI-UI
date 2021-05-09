@@ -16,7 +16,7 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
-import { OverlayService } from '../../overlay/overlay.module';
+import { AppOverlayModule, OverlayService } from '../../overlay/overlay.module';
 
 
 @NgModule({
@@ -25,7 +25,8 @@ import { OverlayService } from '../../overlay/overlay.module';
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
     LbdModule,
-    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'})
+    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'}),
+    AppOverlayModule
   ],
   declarations: [
     HomeComponent,
@@ -38,7 +39,6 @@ import { OverlayService } from '../../overlay/overlay.module';
     UpgradeComponent
   ],
   providers:[
-    OverlayService
   ]
 })
 

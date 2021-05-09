@@ -12,7 +12,6 @@ import { PreloginFooterModule } from './shared/preloginfooter/preloginfooter.mod
 import { SidebarModule } from './sidebar/sidebar.module';
 
 import { AppComponent } from './app.component';
-import { OverlayService } from './overlay/overlay.module';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { PreloginComponent } from './layouts/prelogin-layout/prelogin-layout.component';
