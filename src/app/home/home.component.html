@@ -4,8 +4,14 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">User Projects  ({{count}}) </h4>
-                        <button type="button" (click)="createProject()">Create Project</button>
+                        <div class="row">
+                            <div class="col-sm-10 col-12">
+                                <h4 class="title">Projects ({{count}}) </h4>
+                            </div>
+                            <div class="col-sm-2 col-12">
+                                <button type="button" (click)="createProject()">Create Project</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="content table-responsive table-full-width">
                         <table class="table table-hover table-striped">
@@ -13,7 +19,7 @@
                                 <tr>
                                     <th>Project Name</th>
                                     <th>Description</th>
-                                    <th>CreatedDate</th>
+                                    <th>Created Date</th>
                                     <th>Active</th>
                                 </tr>
                             </thead>
@@ -22,15 +28,21 @@
                                     <td>{{item.name}}</td>
                                     <td>{{item.description}}</td>
                                     <td>{{item.createdDate}}</td>
-                                    <td>{{item.isActive}}</td>
+                                    <td *ngIf="item.isActive == 1"><img src="./assets/img/green-active.png"
+                                            style="width:30px"></td>
+                                    <td *ngIf="item.isActive == 2"><img src="./assets/img/red-inactive.gif"
+                                            style="width:25px"></td>
                                     <td>
-                                        <button type="button">Edit</button>
-                                        <button type="button">Delete</button>
+                                        <a href='#' class="ct-icon">
+                                            <i class="glyphicon glyphicon-edit ct-icon" style="color: grey"></i>
+                                        </a>
+                                        <a href='#' class="ct-icon">
+                                            <i class="glyphicon glyphicon-trash ct-icon" style="color: grey;"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>

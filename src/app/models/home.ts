@@ -1,10 +1,15 @@
+export class UserProjectsResponse{
+total: any;
+projects: UserProjectsViewModel[];
+}
+
 export class UserProjectsViewModel{
     id: any;
     createdBy: any;
     name: string;
     description: string;
-    isActive: boolean;
-    createdDate: Date;
+    isActive: any;
+    createdDate: string;
     updatedBy: string;
     updatedDate: null;
     deletedBy: string;

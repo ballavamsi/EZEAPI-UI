@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { UserProjectsViewModel } from "app/models/home";
+import { UserProjectsResponse } from "app/models/home";
 import { environment } from "environments/environment";
 import { Observable } from "rxjs";
 
@@ -16,7 +16,7 @@ import { Observable } from "rxjs";
       this._API = environment.API_URL + '/';
     }
 
-    getUserProjects(userId: any) : Observable<UserProjectsViewModel[]>  {
-        return this.http.get<UserProjectsViewModel[]>(this._API + `Management/Projects?userId=${userId}`);
+    getUserProjects(userId: any,pageNo: any,pageSize: any,detailed: boolean) : Observable<UserProjectsResponse>  {
+        return this.http.get<UserProjectsResponse>(this._API + `Management/Projects?userId=${userId}&PageNo=${pageNo}&PageSize=${pageSize}&Detailed=${detailed}`);
       }
 }

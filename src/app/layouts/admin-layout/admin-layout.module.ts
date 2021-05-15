@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LbdModule } from '../../lbd/lbd.module';
@@ -16,7 +17,6 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
-import { AppOverlayModule, OverlayService } from '../../overlay/overlay.module';
 
 
 @NgModule({
@@ -26,7 +26,6 @@ import { AppOverlayModule, OverlayService } from '../../overlay/overlay.module';
     FormsModule,
     LbdModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'}),
-    AppOverlayModule
   ],
   declarations: [
     HomeComponent,
@@ -39,6 +38,7 @@ import { AppOverlayModule, OverlayService } from '../../overlay/overlay.module';
     UpgradeComponent
   ],
   providers:[
+    DatePipe,
   ]
 })
 

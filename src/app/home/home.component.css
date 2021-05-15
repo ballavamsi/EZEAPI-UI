@@ -1,0 +1,15 @@
+ td {
+    max-width:150px;
+  }
+
+  .glyphicon {
+    font-size: 20px;
+}
+
+td a + a {
+  padding-left: 2em;
+} 
+
+.ct-icon:hover {
+  color:blue;
+}
