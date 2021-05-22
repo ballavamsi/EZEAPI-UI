@@ -4,6 +4,7 @@ import { UserProjectsResponse, UserProjectsViewModel } from 'app/models/home';
 import { HomeService } from '../services/home/home.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,6 +13,8 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   public projectsData: UserProjectsViewModel[];
   @Input() count: number;
+  @Input() p: number;
+  @Input() tablecount: number;
   constructor(public datepipe: DatePipe,private _homeService: HomeService,private router: Router) { }
 
   ngOnInit() {
@@ -20,14 +23,13 @@ export class HomeComponent implements OnInit {
       {
         data.projects.forEach(item => {
          var newdate = new Date(item.createdDate);
-        //  let newdateStr = newdate.toString();
-        //  item.createdDate = newdateStr;
          item.createdDate = this.datepipe.transform(newdate, 'dd MMM y');
-         
         });
       }
       this.projectsData = data.projects;
       this.count = data.total;
+      this.p =1;
+      this.tablecount = 5;
     },
   );
  }

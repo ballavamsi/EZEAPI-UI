@@ -17,6 +17,7 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { NgxPaginationModule, PaginatePipe } from 'ngx-pagination';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
     FormsModule,
     LbdModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'}),
+    NgxPaginationModule
   ],
   declarations: [
     HomeComponent,
@@ -39,6 +41,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
   ],
   providers:[
     DatePipe,
+    PaginatePipe
   ]
 })
 

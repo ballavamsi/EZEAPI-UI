@@ -24,25 +24,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let item of projectsData">
+                                <tr
+                                    *ngFor="let item of projectsData | paginate: { itemsPerPage: count, currentPage: p }">
                                     <td>{{item.name}}</td>
                                     <td>{{item.description}}</td>
                                     <td>{{item.createdDate}}</td>
-                                    <td *ngIf="item.isActive == 1"><img src="./assets/img/green-active.png"
-                                            style="width:30px"></td>
-                                    <td *ngIf="item.isActive == 2"><img src="./assets/img/red-inactive.gif"
-                                            style="width:25px"></td>
+                                    <td *ngIf="item.isActive == 1"><i class="glyphicon glyphicon-ok ct-icon gactive"></i></td>
+                                    <td *ngIf="item.isActive == 2"><i class="glyphicon glyphicon-delete ct-icon ginactive"></i></td>
                                     <td>
-                                        <a href='#' class="ct-icon">
-                                            <i class="glyphicon glyphicon-edit ct-icon" style="color: grey"></i>
+                                        <a href='#'>
+                                            <i class="glyphicon glyphicon-edit ct-icon gedit"></i>
                                         </a>
-                                        <a href='#' class="ct-icon">
-                                            <i class="glyphicon glyphicon-trash ct-icon" style="color: grey;"></i>
+                                        <a href='#'>
+                                            <i class="glyphicon glyphicon-trash ct-icon gdelete"></i>
                                         </a>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <!--Including the pagination control.-->
+                    <div class="text-right">
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
                     </div>
                 </div>
             </div>

@@ -16,10 +16,12 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { PreloginComponent } from './layouts/prelogin-layout/prelogin-layout.component';
 import { PreloginLayoutModule } from './layouts/prelogin-layout/prelogin-layout.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   imports: [
-    BrowserAnimationsModule,
+    BrowserAnimationsModule, 
+    NgxPaginationModule,
     FormsModule,
     RouterModule,
     HttpClientModule,
@@ -29,8 +31,7 @@ import { PreloginLayoutModule } from './layouts/prelogin-layout/prelogin-layout.
     SidebarModule,
     AppRoutingModule,
     PreloginLayoutModule,
-    PreloginFooterModule
-
+    PreloginFooterModule,
   ],
   declarations: [
     AppComponent,

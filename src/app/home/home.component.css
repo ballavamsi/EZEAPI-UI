@@ -10,6 +10,32 @@ td a + a {
   padding-left: 2em;
 } 
 
-.ct-icon:hover {
-  color:blue;
+.gedit
+{
+    color:grey;
+}
+
+.gdelete
+{
+    color:grey;
+}
+
+.gedit:hover
+{
+    color:#44c5ff;
+}
+
+.gdelete:hover
+{
+    color:#D4464F;
+}
+
+.gactive
+{
+  color:green;
+}
+
+.ginactive
+{
+  color:#D4464F;
 }
