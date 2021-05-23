@@ -25,7 +25,7 @@
     z-index: 1030;
 }
 .navbar-transparent {
-    padding-top: 15px;
+    padding-top: 0px;
     background-color: transparent;
     border-bottom: 1px solid transparent;
 }
@@ -45,6 +45,15 @@
 .navbar-toggle, .ui-slider-handle:focus, input:focus {
     outline: 0!important;
 }
+
+.navbar-nav {
+    padding-top: 15px;
+}
+
+.signintext{
+    color:#EFF0FC;
+}
+
 
 @media (max-width: 992px)
 {.navbar-transparent {

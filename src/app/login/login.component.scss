@@ -38,8 +38,8 @@ div {
 }
 
 .full-page[data-color=red]:after {
-    background: #fb404b;
-    background: linear-gradient(to bottom,#fb404b 0,rgba(187,5,2,.6) 100%);
+    background: #213E3B;
+    background: linear-gradient(to bottom,#213E3B 0,rgba(187,5,2,.6) 100%);
     background-size: 150% 150%;
 }
 
@@ -48,8 +48,8 @@ div {
 }
 
 .full-page:after {
-    background: #787878;
-    background: linear-gradient(to bottom,#787878 0,rgba(52,52,52,.4) 100%);
+    background: #213E3B;
+    background: linear-gradient(to bottom,#213E3B 0,rgba(52,52,52,.4) 100%);
     background-size: 150% 150%;
     z-index: 3;
     opacity: 1;

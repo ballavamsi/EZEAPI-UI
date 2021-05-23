@@ -10,7 +10,7 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full',
   }, {
     path: '',
@@ -31,12 +31,8 @@ const routes: Routes = [
       }]
   },
   {
-    path: 'create-project',
-    component: CreateProjectComponent
-  },
-  {
     path: '**',
-    redirectTo: 'dashboard'
+    redirectTo: 'home'
   }
 ];
 
