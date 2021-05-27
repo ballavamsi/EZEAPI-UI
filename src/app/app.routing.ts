@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { PreloginComponent } from './layouts/prelogin-layout/prelogin-layout.component';
-import { CreateProjectComponent } from './create-project/create-project.component';
 
 const routes: Routes = [
   {

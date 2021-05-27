@@ -9,8 +9,14 @@
                 <div class="header text-center">Login</div>
                 <div class="content">
                   <div class="form-group">
-                    <button class="btn btn-fill btn-danger btn-wd btn-inline" type="button" (click)="googleSignIn()">Login wih Facebook</button>
-                    <button class="btn btn-fill btn-danger btn-wd btn-inline" type="button" (click)="googleSignIn()">Login with Google</button>
+                    <a href="javascript:void(0)" class="btn btn-neutral btn-icon"  (click)="googleSignIn()">
+                      <span class="btn-inner--icon"><img src="../assets/img/facebook.svg"></span>
+                      <span class="btn-inner--text">Facebook</span>
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-neutral btn-icon" (click)="googleSignIn()">
+                      <span class="btn-inner--icon"><img src="../assets/img/google.svg"></span>
+                      <span class="btn-inner--text">Google</span>
+                    </a>
                   </div>
                 </div>
               </div>

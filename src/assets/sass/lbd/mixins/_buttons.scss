@@ -1,6 +1,6 @@
 // Mixin for generating new styles
 @mixin btn-styles($btn-color, $btn-states-color) {
-  border-color: $btn-color;
+  border-color: #FFFFFF;
   color: $btn-color;
   
   &:hover,
@@ -24,14 +24,14 @@
     &:active,
     &.active {
       background-color: $transparent-bg;
-          border-color: $btn-color;
+      border-color: #FFFFFF;
     }
   }
   
 
   &.btn-fill {
     color: $white-color;
-    background-color: $btn-color;
+    border-color: #FFFFFF;
     @include opacity(1);  
 
     &:hover,
