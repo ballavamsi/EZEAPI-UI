@@ -1,0 +1,120 @@
+.navbar-transparent .navbar-brand, [class*=navbar-ct] .navbar-brand {
+    color: #fff;
+    opacity: .9;
+    filter: alpha(opacity=90);
+}
+
+.navbar .navbar-brand {
+    font-weight: 400;
+    margin: 7px 0;
+    padding: 15px;
+    font-size: 20px;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.navbar.navbar-absolute {
+    position: absolute;
+    width: 100%;
+    z-index: 1030;
+}
+.navbar-transparent {
+    padding-top: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+}
+
+.navbar {
+    border: 0;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+.navbar-toggle {
+    margin-top: 19px;
+    margin-bottom: 19px;
+    border: 0;
+}
+
+.navbar-toggle, .ui-slider-handle:focus, input:focus {
+    outline: 0!important;
+}
+
+.navbar-nav {
+    padding-top: 15px;
+}
+
+.signintext{
+    color:#EFF0FC;
+}
+
+
+@media (max-width: 992px)
+{.navbar-transparent {
+    padding-top: 15px;
+}}
+
+@media (max-width: 992px)
+{.navbar>div {
+    left: 0;
+    width: 100%;
+    transition: .33s cubic-bezier(.685,.0473,.346,1);
+    position: relative;
+}}
+
+@media (max-width: 992px)
+{.container .navbar-header {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    transition: .33s cubic-bezier(.685,.0473,.346,1);
+}}
+
+@media (max-width: 992px)
+{.navbar-header {
+    float: none;
+}}
+
+@media (max-width: 992px)
+{.navbar-header .navbar-toggle {
+    margin: 10px 15px 10px 0;
+    width: 40px;
+    height: 40px;
+}}
+
+@media (max-width: 992px)
+{.navbar-collapse.collapse.in, .navbar-header .collapse, .navbar-toggle {
+    display: block!important;
+}}
+
+@media (max-width: 992px)
+{.off-canvas-sidebar .navbar-collapse {
+    top: -15px;
+    margin: 0!important;
+    height: 100vh!important;
+    display: block!important;
+}}
+
+@media (max-width: 992px)
+{.bootstrap-navbar, .off-canvas-sidebar .navbar-collapse, .sidebar {
+    position: fixed;
+    display: block;
+    top: 0;
+    height: auto;
+    width: 260px;
+    right: 0;
+    left: auto;
+    z-index: 1032;
+    visibility: visible;
+    overflow-y: visible;
+    padding: 0;
+    background-color: #888;
+    -webkit-transform: translate3d(260px,0,0);
+    transform: translate3d(260px,0,0);
+    transition: .33s cubic-bezier(.685,.0473,.346,1);
+}}

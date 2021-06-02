@@ -1,0 +1,41 @@
+ td {
+    max-width:150px;
+  }
+
+  .glyphicon {
+    font-size: 20px;
+}
+
+td a + a {
+  padding-left: 2em;
+} 
+
+.gedit
+{
+    color:grey;
+}
+
+.gdelete
+{
+    color:grey;
+}
+
+.gedit:hover
+{
+    color:#44c5ff;
+}
+
+.gdelete:hover
+{
+    color:#D4464F;
+}
+
+.gactive
+{
+  color:green;
+}
+
+.ginactive
+{
+  color:#D4464F;
+}

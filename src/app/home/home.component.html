@@ -1,0 +1,54 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <div class="row">
+                            <div class="col-sm-10 col-12">
+                                <h4 class="title">Projects ({{count}}) </h4>
+                            </div>
+                            <div class="col-sm-2 col-12">
+                                <button type="button" (click)="createProject()">Create Project</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Description</th>
+                                    <th>Created Date</th>
+                                    <th>Active</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr
+                                    *ngFor="let item of projectsData | paginate: { itemsPerPage: count, currentPage: p }">
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.description}}</td>
+                                    <td>{{item.createdDate}}</td>
+                                    <td *ngIf="item.isActive == 1"><i class="glyphicon glyphicon-ok ct-icon gactive"></i></td>
+                                    <td *ngIf="item.isActive == 2"><i class="glyphicon glyphicon-delete ct-icon ginactive"></i></td>
+                                    <td>
+                                        <a href='#'>
+                                            <i class="glyphicon glyphicon-edit ct-icon gedit"></i>
+                                        </a>
+                                        <a href='#'>
+                                            <i class="glyphicon glyphicon-trash ct-icon gdelete"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--Including the pagination control.-->
+                    <div class="text-right">
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
