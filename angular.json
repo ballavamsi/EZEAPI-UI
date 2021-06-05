@@ -3,22 +3,27 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lbd-free-angular-cli": {
+    "ezeapi-ui": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "targets": {
+      "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/ezeapi-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.json",
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/assets",
-              "src/favicon.ico"
+              "src/favicon.ico",
+              {
+                "glob": "_redirects",
+                "input": "src",
+                "output": "/"
+              }
             ],
             "styles": [
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
@@ -57,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "lbd-free-angular-cli:build"
+            "browserTarget": "ezeapi-ui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "lbd-free-angular-cli:build:production"
+              "browserTarget": "ezeapi-ui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "lbd-free-angular-cli:build"
+            "browserTarget": "ezeapi-ui:build"
           }
         },
         "test": {
@@ -102,21 +107,31 @@
             "tsConfig": [
               "src/tsconfig.json"
             ],
-            "exclude": []
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/ezeapi-ui",
+            "netlifyToken": "17nWoltsJFW2xQOu9pmvRlaj7qWJPjpx7MZS7pbxqJk",
+            "siteId": "c80b48fd-1354-490d-92f1-945678a15b0c"
           }
         }
       }
     },
-    "lbd-free-angular-cli-e2e": {
+    "ezeapi-ui-e2e": {
       "root": "e2e",
       "sourceRoot": "e2e",
       "projectType": "application",
-      "targets": {
+      "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "lbd-free-angular-cli:serve"
+            "devServerTarget": "ezeapi-ui:serve"
           }
         },
         "lint": {
@@ -131,7 +146,7 @@
       }
     }
   },
-  "defaultProject": "lbd-free-angular-cli",
+  "defaultProject": "ezeapi-ui",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

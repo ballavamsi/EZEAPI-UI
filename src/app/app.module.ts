@@ -1,7 +1,7 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app.routing';
@@ -17,6 +17,9 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { PreloginComponent } from './layouts/prelogin-layout/prelogin-layout.component';
 import { PreloginLayoutModule } from './layouts/prelogin-layout/prelogin-layout.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SocialLoginModule } from 'angularx-social-login';
+import { NgxSpinnerModule } from "ngx-spinner"; 
+
 
 @NgModule({
   imports: [
@@ -30,6 +33,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FooterModule,
     SidebarModule,
     AppRoutingModule,
+    SocialLoginModule,
+    NgxSpinnerModule,
     PreloginLayoutModule,
     PreloginFooterModule,
   ],
