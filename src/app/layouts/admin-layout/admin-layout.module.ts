@@ -18,16 +18,19 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { NgxPaginationModule, PaginatePipe } from 'ngx-pagination';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
   imports: [
     CommonModule,
+    NgxSpinnerModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
     LbdModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'}),
-    NgxPaginationModule
+    NgxPaginationModule,
+
   ],
   declarations: [
     HomeComponent,
