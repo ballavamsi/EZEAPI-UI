@@ -16,6 +16,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 export class LoginComponent implements OnInit {
   public platform = '';
   public errorMessage = '';
+  public userToken ='';
 
   constructor(private router: Router,
     private _socialAuthService: SocialAuthService,
@@ -34,11 +35,13 @@ export class LoginComponent implements OnInit {
       loginUser.email = user.email;
       loginUser.externalAppName = this.platform;
       loginUser.externalAppToken = user.id;
+      this.userToken = user.authToken;
 
       this._userService.signInUser(loginUser).subscribe((data) => {
         this._spinnerService.hide();
-        this._storageService.setSession(Constants.AuthToken, data.tokens.token);
-        this.router.navigate(['dashboard']);
+        this._storageService.setSession(Constants.SessionKey, JSON.stringify(data));
+        this._storageService.setSession(Constants.AuthToken, user.authToken);
+        this.router.navigate([`dashboard/${data.user.id}`]);
       },
         error => {
           this._spinnerService.hide();
@@ -85,8 +88,9 @@ export class LoginComponent implements OnInit {
   SignUp(signUpUser: UserSignUpModel) {
     this._userService.signUpUser(signUpUser).subscribe((data) => {
       this._spinnerService.hide();
-      this._storageService.setSession(Constants.AuthToken, data.tokens.token);
-      this.router.navigate(['dashboard']);
+      this._storageService.setSession(Constants.SessionKey, JSON.stringify(data));
+      this._storageService.setSession(Constants.AuthToken, this.userToken);
+      this.router.navigate([`dashboard/${data.user.id}`]);
     },
       error => {
         this._spinnerService.hide();
