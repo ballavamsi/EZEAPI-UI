@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-setup',
@@ -8,10 +8,20 @@ import { Router } from '@angular/router';
 })
 export class ProjectSetupComponent implements OnInit {
 
-  constructor(private router: Router) { 
-   }
+  routeId :any;
+  langId :any;
+  description  ='';
 
-  ngOnInit() {
+   
+  constructor(private router: Router,
+    private _activateRoute: ActivatedRoute) {
+    this._activateRoute.params.subscribe((data) => {
+      this.routeId = data['routeId'];
+      this.langId = data['langId'];
+    });
   }
 
+  ngOnInit() {
+
+  }
 }

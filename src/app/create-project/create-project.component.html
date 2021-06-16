@@ -4,24 +4,24 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
-                        <form action="#" method="#" novalidate="" class="ng-untouched ng-pristine ng-valid">
-                            <div class="card">
-                                <div class="header text-center">Create Project</div>
-                                <div class="content">
-                                    <div class="form-group">
-                                        <label for="Name">Name</label>
-                                        <input type="text" class="form-control" placeholder="Enter Project Name here" />
-                                        <label for="Description">Description</label>
-                                        <textarea name="comment" class="form-control"
-                                            placeholder="Enter Project Description"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <button class="btn btn-fill btn-danger btn-wd btn-inline" type="button"
-                                            >Create</button>
-                                    </div>
+                        <div class="card-body">
+                            <form [formGroup]="projectform" (ngSubmit)="onSubmit()">
+                                <div>
+                                    <label for="name">
+                                        Name
+                                    </label>
+                                    <input id="name" type="text" formControlName="name">
                                 </div>
-                            </div>
-                        </form>
+                                <div>
+                                    <label for="description">
+                                        Description
+                                    </label>
+                                    <input id="description" type="text" formControlName="description">
+                                </div>
+                                <hr class="my-4" />
+                                <button type="submit" class="btn btn-primary btn">Submit</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

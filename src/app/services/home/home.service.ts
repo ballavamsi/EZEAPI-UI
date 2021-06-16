@@ -11,4 +11,8 @@ export class HomeService {
   public getUserProjects(userId: any,pageNo: any,pageSize: any,detailed: boolean) {
     return this._api.getUserProjects(userId,pageNo,pageSize,detailed);
   }
+
+  public createUserProject(userId: any,langId: any) {
+    return this._api.createUserProject(userId,langId);
+  }
 }

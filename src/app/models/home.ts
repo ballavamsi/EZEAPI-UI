@@ -22,3 +22,10 @@ export class UserProjectsViewModel{
     dbEnvironment: string;
     enableEmails: string
   }
+
+  export class createProjectResponse{
+    userId: any;
+    langId: any;
+    name: string;
+    description: string;
+  }
