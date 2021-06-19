@@ -19,6 +19,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { NgxPaginationModule, PaginatePipe } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { CreateProjectComponent } from 'app/create-project/create-project.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    UpgradeComponent
+    UpgradeComponent,
+    CreateProjectComponent
   ],
   providers:[
     DatePipe,
