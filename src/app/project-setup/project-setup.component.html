@@ -1,0 +1,13 @@
+<form [formGroup]="oppoSuitsForm" (ngSubmit)="onSubmit()">
+
+    <select formControlName="dbname">
+      <option>Choose oppo suit</option>
+      <option>SQL</option>
+      <option>MySQL</option>
+    </select>
+
+    <textarea name="comment" class="form-control"
+    placeholder="Enter Connection String" formControlName="dbconnectionstring"></textarea>
+  
+    <button>Submit</button>
+  </form>

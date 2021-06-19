@@ -6,6 +6,7 @@ import { StorageService } from './storage/storage.service';
 
 @Injectable()
 export class TokenInterceptorService implements HttpInterceptor {
+  public tokenToBeused = '';
   constructor(private _storageService: StorageService) { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // All HTTP requests are going to go through this method
@@ -33,11 +34,6 @@ export class TokenInterceptorService implements HttpInterceptor {
         return request.clone({
           headers: request.headers.set(Constants.ApplicationId, "4")
             .set(Constants.ApplicationToken, "dd694709-97dd-4854-ad9d-cafa23ead428")
-        });
-      }
-      else {
-        return request.clone({
-          headers: request.headers.set("Authorization", "Bearer " + userDetails?.tokens.token)
         });
       }
     }

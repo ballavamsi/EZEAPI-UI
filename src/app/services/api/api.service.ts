@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { UserProjectsResponse } from "app/models/home";
-import { UserLoginResponse, UserSignInModel, UserSignUpModel } from "app/models/User";
+import { createProjectResponse, UserLoginResponse, UserSignInModel, UserSignUpModel } from "app/models/User";
 import { environment } from "environments/environment";
 import { Observable } from "rxjs";
 
@@ -27,5 +27,9 @@ export class ApiService {
 
   signUpUser(data: UserSignUpModel): Observable<UserLoginResponse> {
     return this.http.post<UserLoginResponse>(this._API + 'user', data);
+  }
+
+  createUserProject(userId: any, langId: any): Observable<createProjectResponse> {
+    return this.http.get<createProjectResponse>(this._API + `Management/Projects?userId=${userId}&langId=${langId}`);
   }
 }

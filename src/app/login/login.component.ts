@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
           this._spinnerService.hide();
           switch (error.status) {
             case 404:
+            case 400:
               signUpUser.firstName = user.firstName;
               signUpUser.lastName = user.lastName;
               signUpUser.profileImage = user.photoUrl;

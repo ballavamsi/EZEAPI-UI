@@ -42,3 +42,13 @@ export class UserSignInModel {
     expiresIn: string;
   }
   
+  export class createProjectResponse{
+    status: userStatusResponse
+  }
+
+  export class userStatusResponse{
+    code: any;
+    description: string;
+    sessionToken: any;
+    sessionExpiryDate: any;
+  }

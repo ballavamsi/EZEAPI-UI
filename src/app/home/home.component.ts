@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     this._spinnerService.show();
     this._activateRoute.params.subscribe((data) => {
       const routeId: string = data['id'];
-      this._homeService.getUserProjects(routeId, 0, 2, false).subscribe((data: UserProjectsResponse) => {
+      this._homeService.getUserProjects(routeId, 0, 5, false).subscribe((data: UserProjectsResponse) => {
         this._spinnerService.hide();
         if (data != null) {
           data.projects.forEach(item => {
