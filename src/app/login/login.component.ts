@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
         this._spinnerService.hide();
         this._storageService.setSession(Constants.SessionKey, JSON.stringify(data));
         this._storageService.setSession(Constants.AuthToken, user.authToken);
-        this.router.navigate([`dashboard/${data.user.id}`]);
+        this.router.navigate([`dashboard`]);
       },
         error => {
           this._spinnerService.hide();

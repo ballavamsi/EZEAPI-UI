@@ -26,8 +26,8 @@ export class CreateProjectComponent implements OnInit {
       // });
 
       this.projectform = new FormGroup({
-        name: new FormControl(),
-        description: new FormControl()
+        name: new FormControl(''),
+        description: new FormControl('')
       });
 
       
