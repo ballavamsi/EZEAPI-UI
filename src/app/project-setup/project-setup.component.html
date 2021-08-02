@@ -1,13 +1,46 @@
-<form [formGroup]="oppoSuitsForm" (ngSubmit)="onSubmit()">
-
-    <select formControlName="dbname">
-      <option>Choose oppo suit</option>
-      <option>SQL</option>
-      <option>MySQL</option>
-    </select>
-
-    <textarea name="comment" class="form-control"
-    placeholder="Enter Connection String" formControlName="dbconnectionstring"></textarea>
-  
-    <button>Submit</button>
-  </form>
+<mat-tab-group mat-align-tabs="center">
+ <mat-tab label="Database">
+    <select id="selectdatabase">
+        <option value="MySQL">MySQL</option>
+        <option value="SQL">SQL</option>
+      </select>
+ </mat-tab>
+ <mat-tab label="Configuration">
+     Connection String
+     <form [formGroup]="projectconfigurationform" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="server">
+                Server
+            </label>
+            <input id="server" type="text" formControlName="server">
+        </div>
+        <div>
+            <label for="port">
+                Port
+            </label>
+            <input id="port" type="text" formControlName="port">
+        </div>
+        <div>
+            <label for="user">
+                User
+            </label>
+            <input id="user" type="text" formControlName="user">
+        </div>
+        <div>
+            <label for="password">
+                Password
+            </label>
+            <input id="password" type="text" formControlName="password">
+        </div>
+        <div>
+            <label for="database">
+                Database
+            </label>
+            <input id="database" type="text" formControlName="database">
+        </div>
+        <hr class="my-4" />
+        <button type="submit" class="btn btn-primary btn">Submit</button>
+    </form>
+ </mat-tab>
+ </mat-tab-group>
+<br>

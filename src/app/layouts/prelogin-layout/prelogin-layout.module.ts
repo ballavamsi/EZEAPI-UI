@@ -11,14 +11,16 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from 'app/services/tokeninterceptor.service';
 import { ApiService } from 'app/services/api/api.service';
+import { LandingComponent } from 'app/landing/landing.component';
 
 @NgModule({
   imports: [
     RouterModule.forChild(PreloginRoutes),
-    NgxSpinnerModule,
+    NgxSpinnerModule
   ],
   declarations: [
-    LoginComponent
+    LoginComponent,
+    LandingComponent
   ],
   providers: [
     {
@@ -43,11 +45,11 @@ import { ApiService } from 'app/services/api/api.service';
         ],
       } as SocialAuthServiceConfig,
     },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptorService,
-      multi: true
-    }, ApiService
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: TokenInterceptorService,
+    //   multi: true
+    // }, ApiService
   ],
 })
 

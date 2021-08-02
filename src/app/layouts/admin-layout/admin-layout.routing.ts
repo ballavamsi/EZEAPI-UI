@@ -16,7 +16,7 @@ import { ProjectSetupComponent } from '../../project-setup/project-setup.compone
 import { ProjectTokenComponent } from '../../project-token/project-token.component';
 
 export const AdminLayoutRoutes: Routes = [
-    { path: 'dashboard/:id',      component: HomeComponent },
+    { path: 'dashboard',      component: HomeComponent },
     { path: 'user',           component: UserComponent },
     { path: 'table',          component: TablesComponent },
     { path: 'typography',     component: TypographyComponent },

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { AppRoutingModule } from './app.routing';
 import { NavbarModule } from './shared/navbar/navbar.module';
@@ -19,6 +20,7 @@ import { PreloginLayoutModule } from './layouts/prelogin-layout/prelogin-layout.
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SocialLoginModule } from 'angularx-social-login';
 import { NgxSpinnerModule } from "ngx-spinner"; 
+
 
 
 @NgModule({
@@ -38,6 +40,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     NgxSpinnerModule,
     PreloginLayoutModule,
     PreloginFooterModule,
+    MatTabsModule
   ],
   declarations: [
     AppComponent,
