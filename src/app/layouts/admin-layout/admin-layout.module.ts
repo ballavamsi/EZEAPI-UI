@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { LbdModule } from '../../lbd/lbd.module';
 import { NguiMapModule} from '@ngui/map';
@@ -20,6 +21,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { NgxPaginationModule, PaginatePipe } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CreateProjectComponent } from 'app/create-project/create-project.component';
+import { ProjectSetupComponent } from 'app/project-setup/project-setup.component';
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import { CreateProjectComponent } from 'app/create-project/create-project.compon
     LbdModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'}),
     NgxPaginationModule,
+    MatTabsModule
 
   ],
   declarations: [
@@ -43,7 +46,8 @@ import { CreateProjectComponent } from 'app/create-project/create-project.compon
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
-    CreateProjectComponent
+    CreateProjectComponent,
+    ProjectSetupComponent
   ],
   providers:[
     DatePipe,

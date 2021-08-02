@@ -76,14 +76,15 @@ export class LoginComponent implements OnInit {
 
   googleSignIn() {
     this.platform = 'google';
-    this._spinnerService.show();
-    this._socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  //  this._spinnerService.show();
+  //  this._socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  this.router.navigate([`dashboard`]);
   }
 
   fbSignIn() {
     this.platform = 'facebook';
-    this._spinnerService.show();
-    this._socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  //  this._spinnerService.show();
+  //  this._socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
   SignUp(signUpUser: UserSignUpModel) {

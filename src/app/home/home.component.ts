@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     private _activateRoute: ActivatedRoute,
     private _spinnerService: NgxSpinnerService,
     private _storageService: StorageService) {
-    this._spinnerService.show();
+  //  this._spinnerService.show();
     this.projectform = new FormGroup({
       name: new FormControl(''),
       description: new FormControl('')
@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
     const routeId: string = userDetails?.user.id;
 
     this._homeService.getUserProjects(routeId, 0, 10, false).subscribe((data: UserProjectsResponse) => {
-      this._spinnerService.hide();
+    //  this._spinnerService.hide();
       if (data != null) {
         data.projects.forEach(item => {
           var newdate = new Date(item.createdDate);

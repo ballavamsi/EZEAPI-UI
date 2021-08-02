@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserProjectsResponse } from 'app/models/home';
 import { createProjectResponse} from 'app/models/User';
 import { HomeService } from 'app/services/home/home.service';
+import { StorageService } from 'app/services/storage/storage.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -12,7 +13,6 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./create-project.component.scss']
 })
 export class CreateProjectComponent implements OnInit {
-  public routeId: any;
   public langId: any;
   projectform: FormGroup;
   newProjectsResponse: createProjectResponse;
@@ -20,11 +20,8 @@ export class CreateProjectComponent implements OnInit {
   constructor(private _router: Router,
     private _activateRoute: ActivatedRoute,
     private _spinnerService: NgxSpinnerService,
-    private _homeService: HomeService) { 
-      // this._activateRoute.params.subscribe((data) => {
-      //   this.routeId = data['id'];
-      // });
-
+    private _homeService: HomeService,
+    private _storageService: StorageService) { 
       this.projectform = new FormGroup({
         name: new FormControl(''),
         description: new FormControl('')
@@ -48,12 +45,13 @@ export class CreateProjectComponent implements OnInit {
   
   createUserProject() {
     this._spinnerService.show();
-    this._homeService.createUserProject(this.routeId,this.langId).subscribe(
+    var userDetails = this._storageService.getUserSessionDetails();
+    this._homeService.createUserProject(userDetails?.user.id,this.langId).subscribe(
       result => {
         const returnData: createProjectResponse = result;
         this.newProjectsResponse = returnData;
         this._spinnerService.hide();
-        this._router.navigate([`project-setup?${this.routeId}&${this.langId}&${this.newProjectsResponse?.status?.description}`],{skipLocationChange: true});
+        this._router.navigate([`project-setup`]);
       },
       error => {
         this._spinnerService.hide();
