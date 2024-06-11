@@ -21,19 +21,24 @@ export class TokenInterceptorService implements HttpInterceptor {
         return request.clone({
           headers: request.headers.set(Constants.ApplicationId, "4")
             .set(Constants.ApplicationToken, "dd694709-97dd-4854-ad9d-cafa23ead428")
+            .set('xapp', 'ezeapi')
         });
       }
       else {
         return request.clone({
-          headers: request.headers.set("Authorization", "Bearer " + userDetails?.tokens.token)
+          headers: request.headers
+            .set("Authorization", "Bearer " + userDetails?.tokens.token)
+            .set('xapp', 'ezeapi')
         });
       }
     }
     else {
       if (request.url.indexOf("Management") < 0) {
         return request.clone({
-          headers: request.headers.set(Constants.ApplicationId, "4")
+          headers: request.headers
+            .set(Constants.ApplicationId, "4")
             .set(Constants.ApplicationToken, "dd694709-97dd-4854-ad9d-cafa23ead428")
+            .set('xapp', 'ezeapi')
         });
       }
     }
