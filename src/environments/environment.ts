@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   // API_URL: "http://localhost:4200/api"
-  API_URL: "https://ezeapi.herokuapp.com/api"
+  API_URL: "https://oneapigw.loca.lt/api"
 };
